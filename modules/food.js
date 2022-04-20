@@ -6,6 +6,7 @@ module.exports= handelData;
 
 async function handelData (request,response){
     let searchQuery=request.query.query;
+    // let url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=f496a03899404166806e57724c13ffbc&query=${searchQuery}`
     let url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.FOOD_API_KEY}&query=${searchQuery}`
     try {
         let result= await axios.get(url);
